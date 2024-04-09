@@ -1,5 +1,5 @@
 import unittest
-from .greeting_service import GreetingService
+from .greeting_service import GreetingService, BLanguageGreetingService
 
 
 class TestGreetingService(unittest.TestCase):
@@ -33,6 +33,13 @@ class TestGreetingService(unittest.TestCase):
 
         msg = greeting.dumpsterFire('', 3)
         expected = " is in a dampster fire###"
+        self.assertEqual(msg, expected)
+
+    def test_B_Lang(self):
+        greeting = BLanguageGreetingService()
+
+        msg = greeting.hello('What', 3)
+        expected = "WBhBaBt!!!"
         self.assertEqual(msg, expected)
 
 
